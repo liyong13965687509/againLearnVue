@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <!--element 测试-->
-        <form-test></form-test>
+        <form-test title="element表单"></form-test>
         <img alt="Vue logo" src="./assets/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js App"/>
         <!--条件-->

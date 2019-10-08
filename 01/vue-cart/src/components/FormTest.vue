@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>element表单</h3>
+        <h3>{{title}}</h3>
         <!--model数据模型 rules校验规则-->
         <el-form :model="ruleForm" :rules="rules" ref="loginForm">
             <!--prop用于校验-->
@@ -21,6 +21,7 @@
 <script>
     export default {
         name: "FromTest",
+        props:['title'],
         data() {
             return {
                 ruleForm: {
