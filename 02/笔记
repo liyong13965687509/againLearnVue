@@ -1,0 +1,28 @@
+1.this.$set(this.foo,'abc','aa') 动态添加响应式属性
+
+2.同级组件间的传值使用：vuex
+
+3.async+await 后面的函数必须返回promise对象
+
+4.生命周期
+组件创建之前
+beforeCreate
+组件创建之后
+created 这里只会执行一次 可进行数据请求，初始化等
+DOM 渲染之前
+beforeMount
+DOM 渲染之后
+mounted 可以进行DOM操作
+数据更新之前
+beforeUpdate
+数据更新之后
+updated
+组件销毁之前
+beforeDestroy
+组件销毁之后
+destroyed
+
+5.虚拟DOM 就是一个js对象，通过js来描述真实的DOM对象就是虚拟DOM
+
+6.当组件被删除或进行路由跳转时会进入到beforeDestroy和destroyed生命周期
+

@@ -1,59 +1,59 @@
 <template>
     <div id="app">
+        <!--element 测试-->
+        <form-test></form-test>
         <img alt="Vue logo" src="./assets/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js App"/>
         <!--条件-->
         <p v-if="showName">{{name}}</p>
         <!--循环-->
         <ul>
-            <li v-for="good in goods" :key="good.id">
+            <li v-for="(good,index) in goods" :key="good.id">
                 <span>{{good.text}}</span>
                 <span>￥{{good.price}}</span>
+                <button @click="addGood(index)">加入购物车</button>
             </li>
         </ul>
-        <p><button @click="addGood">加入购物车</button></p>
+        <!--购物车-->
+        <Cart :name="name"></Cart>
     </div>
 </template>
 
 <script>
     import HelloWorld from './components/HelloWorld.vue'
+    import Cart from './components/Cart.vue';
+    import FormTest from './components/FormTest.vue';
+    import axios from 'axios';
 
     export default {
         name: 'app',
         data() {
             return {
-                name: 'hello,vue',
+                name: '开课吧购物车',
                 showName: false,
-                goods: [
-                    {
-                        id: '1',
-                        text: 'web全栈架构师',
-                        price: '1020'
-                    },
-                    {
-                        id: '2',
-                        text: 'Python全栈架构师',
-                        price: '1000'
-                    },
-                ]
+                goods: [],
             }
         },
         components: {
-            HelloWorld
+            HelloWorld,
+            Cart,
+            FormTest
         },
-        created() {
+        async created() {
             // 创建钩子，组件创建完成执行一次
             setTimeout(() => {
                 this.showName = true;
             }, 1000)
+
+            // 查询产品列表
+            const response = await axios.get('/api/goods');
+            this.goods = response.data.list;
         },
         methods: {
-            addGood() {
-                this.goods.push({
-                    id: '3',
-                    text: 'lalla',
-                    price: '1500'
-                })
+            addGood(i) {
+                // 获取goods中对应项
+                const good = this.goods[i];
+                this.$bus.$emit('addCart', good);
             }
         },
     }
