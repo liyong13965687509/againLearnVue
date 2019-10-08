@@ -12,7 +12,7 @@
             </el-form-item>
 
             <el-form-item>
-                <el-input type="primary" @click="submitForm()">登录</el-input>
+                <el-button type="primary" @click="submitForm()">登录</el-button>
             </el-form-item>
         </el-form>
     </div>
