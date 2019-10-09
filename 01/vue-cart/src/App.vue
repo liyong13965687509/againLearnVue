@@ -1,7 +1,17 @@
 <template>
     <div id="app">
+        <win>
+            <template slot="head">
+                <h3>HEAD</h3>
+            </template>
+            21546
+            <template slot="foot">
+                <button>确定</button>
+            </template>
+        </win>
         <!--element 测试-->
         <form-test title="element表单"></form-test>
+        <k-button @aaa="handleClick"></k-button>
         <img alt="Vue logo" src="./assets/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js App"/>
         <!--条件-->
@@ -23,10 +33,17 @@
     import HelloWorld from './components/HelloWorld.vue'
     import Cart from './components/Cart.vue';
     import FormTest from './components/FormTest.vue';
+    import KButton from './components/KButton.vue';
+    import Win from './components/Win.vue';
     import axios from 'axios';
 
     export default {
         name: 'app',
+        provide(){
+            return {
+                someValue:'上古遗产'
+            }
+        },
         data() {
             return {
                 name: '开课吧购物车',
@@ -37,7 +54,9 @@
         components: {
             HelloWorld,
             Cart,
-            FormTest
+            FormTest,
+            KButton,
+            Win
         },
         async created() {
             // 创建钩子，组件创建完成执行一次
@@ -54,6 +73,9 @@
                 // 获取goods中对应项
                 const good = this.goods[i];
                 this.$bus.$emit('addCart', good);
+            },
+            handleClick(obj){
+                console.log(obj);
             }
         },
     }

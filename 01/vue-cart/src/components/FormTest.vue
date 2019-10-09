@@ -1,5 +1,19 @@
 <template>
     <div>
+        <!--开课吧表单input-->
+       <k-form :model="ruleForm" :rules="rules" ref="loginForm2">
+           <k-form-item label="用户名" prop="name">
+               <k-input v-model="ruleForm.name"></k-input>
+           </k-form-item>
+           <k-form-item label="密码" prop="pwd">
+               <k-input v-model="ruleForm.pwd" type="password"></k-input>
+           </k-form-item>
+           <k-form-item>
+               <el-button type="primary" @click="submitForm2()">登录</el-button>
+           </k-form-item>
+       </k-form>
+
+        {{ruleForm}}
         <h3>{{title}}</h3>
         <!--model数据模型 rules校验规则-->
         <el-form :model="ruleForm" :rules="rules" ref="loginForm">
@@ -19,9 +33,19 @@
 </template>
 
 <script>
+    import KInput from './Input.vue';
+    import KFormItem from './FormItem.vue';
+    import KForm from './Form.vue';
+
     export default {
         name: "FromTest",
-        props:['title'],
+        components: {KInput, KFormItem,KForm},
+        props: {
+            title: {
+                type: String,
+                required: true,
+            }
+        },
         data() {
             return {
                 ruleForm: {
@@ -57,6 +81,9 @@
                         return false;// 避免浏览器默认提交行为
                     }
                 })
+            },
+            submitForm2(){
+
             }
         },
     }

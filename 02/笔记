@@ -1,6 +1,9 @@
 1.this.$set(this.foo,'abc','aa') 动态添加响应式属性
 
-2.同级组件间的传值使用：vuex
+2.
+父传子 props
+子传父 emit 第二个参数可以传值
+同级组件间的传值使用：vuex
 
 3.async+await 后面的函数必须返回promise对象
 
@@ -25,4 +28,8 @@ destroyed
 5.虚拟DOM 就是一个js对象，通过js来描述真实的DOM对象就是虚拟DOM
 
 6.当组件被删除或进行路由跳转时会进入到beforeDestroy和destroyed生命周期
+
+7.form 绑定数据模型 添加校验规则
+formItem label prop 检验和显示错误
+input
 
