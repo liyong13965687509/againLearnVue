@@ -83,7 +83,14 @@
                 })
             },
             submitForm2(){
-
+                this.$refs.loginForm2.validate(valid => {
+                    if (valid) {
+                        alert('提交登录！')
+                    } else {
+                        console.log('校验失败！');
+                        return false;// 避免浏览器默认提交行为
+                    }
+                })
             }
         },
     }

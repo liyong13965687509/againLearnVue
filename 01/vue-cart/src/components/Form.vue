@@ -29,7 +29,7 @@
         methods: {
             async validate(callback) {
                 // 将FormItem数组转换为validate()返回的promise数组
-                const tasks = this.filter.map(item => item.validate())
+                const tasks = this.fields.map(item => item.validate())
                 // 获取所有结果统一处理
                 const results = await Promise.all(tasks);
                 let ret = true;

@@ -40,7 +40,7 @@
                     };
                     // 校验器
                     const validator = new schema(descriptor);
-                    validator.validate({[this.prop]: this.form.model[this.props]}, errors => {
+                    validator.validate({[this.prop]: this.form.model[this.prop]}, errors => {
                         if (errors) {
                             // 校验失败
                             this.validateStatus = 'error';
