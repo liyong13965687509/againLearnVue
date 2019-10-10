@@ -1,0 +1,9 @@
+1.vue-router 路由：动态的进行DOM的移除和添加操作
+
+2.vuex 状态管理器
+
+3.history模式和hash模式区别
+hash模式的原理是：onhashchange事件，只能修改#后面的url片段----前端路由，刷新页面时候http部分不会改变
+history模式，前后端Url要求一致，否则刷新会报错404,因为刷新会去请求数据，服务器配置若URL匹配不到资源就重定向到index.html
+
+4.@是webpack配置的别名指向src目录

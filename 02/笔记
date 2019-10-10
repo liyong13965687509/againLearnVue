@@ -31,5 +31,7 @@ destroyed
 
 7.form 绑定数据模型 添加校验规则
 formItem label prop 检验和显示错误
-input
+input 负责数据的双向绑定
+
+8.v-model是：value和@input的语法糖
 

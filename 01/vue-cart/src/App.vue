@@ -1,14 +1,19 @@
 <template>
     <div id="app">
-        <win>
-            <template slot="head">
-                <h3>HEAD</h3>
-            </template>
-            21546
-            <template slot="foot">
-                <button>确定</button>
-            </template>
-        </win>
+      <!--路由导航-->
+      <router-link to="/page1">Page1</router-link> |
+      <router-link to="/page2/vuejs">Page2</router-link>
+      <!--路由出口-->
+      <router-view></router-view>
+        <!--<win>-->
+            <!--<template slot="head">-->
+                <!--<h3>HEAD</h3>-->
+            <!--</template>-->
+            <!--21546-->
+            <!--<template slot="foot">-->
+                <!--<button>确定</button>-->
+            <!--</template>-->
+        <!--</win>-->
         <!--element 测试-->
         <form-test title="element表单"></form-test>
         <k-button @aaa="handleClick"></k-button>
