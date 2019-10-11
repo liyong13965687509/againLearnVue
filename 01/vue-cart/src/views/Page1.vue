@@ -13,13 +13,8 @@
         name: "Page1",
         methods: {
             gotoPage2() {
-                this.$router.push('/page2/react')
-                // this.$router.push({
-                //     path:'page2',
-                //     query:{
-                //
-                //     }
-                // })
+                // this.$router.push('/page2/1/react')
+                this.$router.push({name: 'page2', params: {id: 1, msg: 'react'}})
             }
         },
     }

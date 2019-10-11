@@ -2,7 +2,7 @@
     <div id="app">
       <!--路由导航-->
       <router-link to="/page1">Page1</router-link> |
-      <router-link to="/page2/vuejs">Page2</router-link>
+      <router-link to="/page2/1/vuejs?foo=bar">Page2</router-link>
       <!--路由出口-->
       <router-view></router-view>
         <!--<win>-->
